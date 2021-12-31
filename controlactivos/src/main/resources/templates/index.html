@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Personas</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div>
+			<a href="/save/0" class="btn btn-primary">Agregar</a>
+		</div>
+		<div style="margin-top:20px;">
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" class="btn btn-success" value="Cerrar sesión">
+			</form>
+		</div>
+		<h2 th:if="${list.isEmpty()}">No hay personas</h2>
+		<div th:if="${!list.isEmpty()}">
+			<h2>Personas</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Documento</th>
+						<th>Nombre</th>
+						<th>Apellido Apaterno</th>
+						<th>Apellido Materno</th>
+						<th>Sexo</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="ca_persona : ${list}">
+						<td th:text="${ca_persona.documento}"></td>
+						<td th:text="${ca_persona.nombre}">
+						<td th:text="${ca_persona.apaterno}">
+						<td th:text="${ca_persona.amaterno}">
+						<td th:text="${ca_persona.sexo}">
+						<td><a class="btn btn-info" th:href="@{/save/{id}(id=${ca_persona.id})}">Editar</a></td>
+						<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${ca_persona.id})}">Eliminar</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

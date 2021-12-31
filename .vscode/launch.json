@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ControlActivosApplication<control-activos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.control-activos.ControlActivosApplication",
+            "projectName": "control-activos",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ControlActivosApplication<control-activos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.controlactivos.ControlActivosApplication",
+            "projectName": "control-activos",
+            "args": ""
+        }
+    ]
+}

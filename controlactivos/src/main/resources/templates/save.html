@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Personas</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<h2>Agregar Persona</h2>
+		<form action="#" th:action="@{/save}" th:object="${ca_persona}"
+			method="post">
+			<div class="form-group">
+				<label for="nombre">Nombre</label> <input type="text"
+					class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+			</div>
+			<input type="hidden" th:field="*{id}" name="id" id="id">
+			<div class="form-group">
+				<label for="nombre">Documento</label> <input type="text"
+					class="form-control" id="documento" th:field="*{documento}" name="documento">
+			</div>
+			<div class="form-group">
+				<label for="nombre">Apellido Paterno</label> <input type="text"
+					class="form-control" id="apaterno" th:field="*{apaterno}"
+					name="apaterno">
+			</div>
+
+			<div class="form-group">
+				<label for="nombre">Apellido Materno</label> <input type="text"
+					class="form-control" id="amaterno" th:field="*{amaterno}"
+					name="amaterno">
+			</div>
+
+			<div class="form-group">
+				<label for="nombre">Sexo</label> <input type="text"
+					class="form-control" id="sexo" th:field="*{sexo}"
+					name="sexo">
+			</div>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+	</div>
+</body>
+</html>
